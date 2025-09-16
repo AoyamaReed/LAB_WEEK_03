@@ -10,19 +10,6 @@ import androidx.navigation.Navigation
 
 class ListFragment : Fragment(){
 
-    private var param1: String? = null
-    private var param2: String? = null
-    // private lateinit var coffeeListener: CoffeeListener;
-    // override fun onAttach(context: Context) {
-    // super.onAttach(context)
-    // if(context is CoffeeListener){
-    // coffeeListener = context
-    // }
-    // else{
-    // throw RuntimeException("Must implement CoffeeListener")
-    // }
-    // }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,7 +23,9 @@ class ListFragment : Fragment(){
         val coffeeList = listOf<View>(
             view.findViewById(R.id.affogato),
             view.findViewById(R.id.americano),
-            view.findViewById(R.id.latte)
+            view.findViewById(R.id.latte),
+            view.findViewById(R.id.espresso),
+            view.findViewById(R.id.cappuccino)
         )
 // coffeeList.forEach{
 // it.setOnClickListener(this)
@@ -54,12 +43,5 @@ class ListFragment : Fragment(){
     companion object {
         // Factory method if needed later
         const val COFFEE_ID = "COFFEE_ID"
-        fun newInstance(param1: String, param2: String) =
-            ListFragment().apply {
-                arguments = Bundle().apply {
-                    putString("param1", param1)
-                    putString("param2", param2)
-                }
-            }
     }
 }
